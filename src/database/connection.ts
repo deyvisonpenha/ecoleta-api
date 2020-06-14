@@ -1,12 +1,5 @@
-import knex from 'knex';
-import path from 'path'
+import {createConnection} from "typeorm";
 
-const connection = knex({
-    client: 'sqlite3',
-    connection: {
-        filename: path.resolve(__dirname, 'database.sqlite'),
-    },
-    useNullAsDefault: true,
-});
-
-export default connection;
+// createConnection method will automatically read connection options
+// from your ormconfig file or environment variables
+createConnection();
